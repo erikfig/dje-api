@@ -6,10 +6,16 @@ const router = Router();
 
 // Endpoint para busca paginada
 router.get('/', async (req: Request, res: Response) => {
-  const { page = 1, limit = 10 } = req.query;
+  const { page = 1, limit = 10, search, dateFrom, dateTo } = req.query;
 
   try {
-    const result = await getPaginatedData(Number(page), Number(limit));
+    const result = await await getPaginatedData(
+      Number(page),
+      Number(limit),
+      search as string,
+      dateFrom as string,
+      dateTo as string
+    );
     res.json(result.rows);
   } catch (error) {
     console.error('Erro ao buscar dados:', error);

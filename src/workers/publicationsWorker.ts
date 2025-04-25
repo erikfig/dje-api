@@ -32,14 +32,14 @@ const startWorker = async () => {
               console.log(`[✓] Registro inserido com sucesso`);
             }
 
-            channel.ack(msg); // Confirma o processamento da mensagem
+            channel.ack(msg);
           } catch (error: unknown) {
             if (error instanceof Error) {
               console.error(`[x] Erro ao processar a mensagem: ${error.message}`);
             } else {
               console.error('[x] Erro ao processar a mensagem: Erro desconhecido');
             }
-            channel.nack(msg, false, false); // Rejeita a mensagem sem reencaminhá-la
+            channel.nack(msg, false, false);
           }
         }
       },

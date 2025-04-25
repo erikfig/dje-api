@@ -10,8 +10,7 @@ export const routes = (app: Express) => {
   app.post('/login', (req: Request, res: Response) => {
     const { username, password } = req.body;
 
-    // Exemplo simples de autenticação (substituir por lógica real)
-    if (username === 'admin' && password === 'password') {
+    if (username === 'admin@admin.com' && password === 'password') {
       const token = generateToken({ username });
       res.json({ token });
     } else {
