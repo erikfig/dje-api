@@ -1,0 +1,29 @@
+{
+  "name": "dje_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "worker:dev": "ts-node-dev src/workers/publicationsWorker.ts",
+    "worker": "ts-node src/workers/publicationsWorker.ts"
+  },
+  "dependencies": {
+    "@types/node": "^22.15.0",
+    "amqplib": "^0.10.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-jwt": "^7.7.5",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.15.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.7",
+    "@types/express": "^5.0.1",
+    "@types/pg": "^8.11.14",
+    "ts-node-dev": "^2.0.0"
+  }
+}
