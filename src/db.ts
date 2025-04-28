@@ -6,6 +6,9 @@ const pool = new Pool({
   user: process.env.POSTGRES_USER,
   password: String(process.env.POSTGRES_PASSWORD),
   database: process.env.POSTGRES_DBNAME,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 export const query = (text: string, params?: any[]) => {
